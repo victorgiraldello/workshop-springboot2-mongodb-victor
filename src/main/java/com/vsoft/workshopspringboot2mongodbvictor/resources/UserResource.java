@@ -3,7 +3,9 @@ package com.vsoft.workshopspringboot2mongodbvictor.resources;
 
 import com.vsoft.workshopspringboot2mongodbvictor.domain.User;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.ArrayList;
 import java.util.Arrays;
