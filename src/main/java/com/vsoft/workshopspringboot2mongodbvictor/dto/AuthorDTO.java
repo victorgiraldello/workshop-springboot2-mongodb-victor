@@ -2,7 +2,9 @@ package com.vsoft.workshopspringboot2mongodbvictor.dto;
 
 import com.vsoft.workshopspringboot2mongodbvictor.domain.User;
 
-public class AuthorDTO {
+import java.io.Serializable;
+
+public class AuthorDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String id;
