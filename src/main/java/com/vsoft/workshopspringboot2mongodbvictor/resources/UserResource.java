@@ -1,6 +1,7 @@
 package com.vsoft.workshopspringboot2mongodbvictor.resources;
 
 
+import com.vsoft.workshopspringboot2mongodbvictor.domain.Post;
 import com.vsoft.workshopspringboot2mongodbvictor.domain.User;
 import com.vsoft.workshopspringboot2mongodbvictor.dto.UserDTO;
 import com.vsoft.workshopspringboot2mongodbvictor.services.UserService;
@@ -55,5 +56,11 @@ public class UserResource {
 		obj = service.update(obj);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
 		return ResponseEntity.noContent().build();
+	}
+
+	@RequestMapping(value="/{id}/posts", method=RequestMethod.GET)
+	public ResponseEntity<List<Post>> findPosts(@PathVariable String id) {
+		User obj = service.findById(id);
+		return ResponseEntity.ok().body(obj.getPosts());
 	}
 }
